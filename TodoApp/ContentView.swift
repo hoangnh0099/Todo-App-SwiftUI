@@ -9,8 +9,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let tasks = Array(0...1000)
+    @State var newTask: String = ""
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            VStack(alignment: .trailing, spacing: 0) {
+                TextField("What do you want to note ?", text: $newTask)
+                List {
+                    Section(header: Text("Task today")) {
+                        ForEach(tasks, id: \.self) {
+                            result in Text(String(result))
+                        }
+                        
+                    }
+                }
+            }
+            .navigationBarTitle(
+                Text("Todo App")
+                    .font(.title)
+            )
+        }
     }
 }
 
