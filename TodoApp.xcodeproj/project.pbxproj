@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -99,7 +99,6 @@
 				0D10E5105836CB008BAD6398 /* Pods-TodoApp.debug.xcconfig */,
 				4BD1AEAA5F0B67F218343135 /* Pods-TodoApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -363,6 +362,7 @@
 				DEVELOPMENT_TEAM = ZM4UKXD547;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TodoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,6 +384,7 @@
 				DEVELOPMENT_TEAM = ZM4UKXD547;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TodoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

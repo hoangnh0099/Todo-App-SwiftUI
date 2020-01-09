@@ -1,35 +1,66 @@
-//
-//  ContentView.swift
-//  TodoApp
-//
-//  Created by Nguyễn Huy Hoàng on 1/9/20.
-//  Copyright © 2020 Nguyễn Huy Hoàng. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     
-    let tasks = Array(0...1000)
     @State var newTask: String = ""
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .trailing, spacing: 0) {
-                TextField("What do you want to note ?", text: $newTask)
+            VStack {
+                Login()
+            }
+        }
+    }
+}
+
+struct Login: View {
+    
+    @State private var phoneNumber: String = ""
+    
+    var body: some View {
+        VStack {
+            Text("Login")
+                .bold()
+                .font(.largeTitle)
+            TextField("Phone number", text: $phoneNumber)
+                .keyboardType(.numberPad)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+                .padding(.horizontal)
+            NavigationLink(destination: Verify()) {
+                Text("Login")
+                    .frame(width: 100)
+                    .foregroundColor(Color.white)
+                    .padding(10)
+            }.background(Color("Button")).clipShape(Capsule()).padding()
+        }
+    }
+}
+
+struct Verify: View {
+    
+    @State private var otpcode: String = ""
+    
+    var body: some View {
+        NavigationView {
+            TextField("OTP Code", text: $otpcode)
+            Button(action: {}) {
+                Text("Login")
+            }
+            .navigationBarTitle(Text("Verify"))
+        }
+    }
+}
+
+struct Home: View {
+    var body: some View {
+        NavigationView {
+            ScrollView {
                 List {
-                    Section(header: Text("Task today")) {
-                        ForEach(tasks, id: \.self) {
-                            result in Text(String(result))
-                        }
-                        
-                    }
+                    Text("Hello")
                 }
             }
-            .navigationBarTitle(
-                Text("Todo App")
-                    .font(.title)
-            )
+            .navigationBarTitle(Text("Home"))
         }
     }
 }
