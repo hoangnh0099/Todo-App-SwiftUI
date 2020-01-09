@@ -14,11 +14,22 @@ struct VerifyScreen: View {
     
     var body: some View {
         NavigationView {
-            TextField("OTP Code", text: $otpCode)
-            Button(action: {}) {
-                Text("Login")
+            VStack {
+                Text("Verify Code")
+                    .bold()
+                    .font(.largeTitle)
+                TextField("OTP Code", text: $otpCode)
+                    .keyboardType(.numberPad)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+                    .padding(.horizontal)
+                NavigationLink(destination: HomeScreen()) {
+                    Text("Login")
+                        .frame(width: 100)
+                        .foregroundColor(Color.white)
+                        .padding(10)
+                }.background(Color("Button")).clipShape(Capsule()).padding()
             }
-            .navigationBarTitle(Text("Verify"))
         }
     }
 }
