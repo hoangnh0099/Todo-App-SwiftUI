@@ -11,24 +11,29 @@ import SwiftUI
 struct HomeScreen: View {
     
     @State private var task: String = ""
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     let a = Array(1...1000)
     
     var body: some View {
         VStack {
-            HStack {
-                TextField("What do you want to note ?", text: $task)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                Button(action: {
-                    // Action
-                }) {
-                    Text("Add")
+            if (self.status) {
+                HStack {
+                    TextField("What do you want to note ?", text: $task)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    Button(action: {
+                        // Action
+                    }) {
+                        Text("Add")
+                    }
+                }.padding()
+                List {
+                    ForEach(a, id: \.self) {
+                        item in Text(String(item))
+                    }
                 }
-            }.padding()
-            List {
-                ForEach(a, id: \.self) {
-                    item in Text(String(item))
-                }
+            } else {
+                LoginScreen()
             }
             
         }
