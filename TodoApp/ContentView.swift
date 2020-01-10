@@ -1,13 +1,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
-    @State var newTask: String = ""
+    
     
     var body: some View {
         NavigationView {
             VStack {
-                LoginScreen()
+                if status {
+                    HomeScreen()
+                } else {
+                    LoginScreen()
+                }
+                
             }
         }
     }

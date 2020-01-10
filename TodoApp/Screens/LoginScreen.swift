@@ -1,11 +1,3 @@
-//
-//  LoginScreen.swift
-//  TodoApp
-//
-//  Created by Nguyễn Huy Hoàng on 1/10/20.
-//  Copyright © 2020 Nguyễn Huy Hoàng. All rights reserved.
-//
-
 import SwiftUI
 import FirebaseAuth
 import Firebase
@@ -14,7 +6,6 @@ import FirebaseFirestore
 struct LoginScreen: View {
     
     @State private var phoneNumber: String = ""
-    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     func signInAnonymous() -> Void {
         Auth.auth().signInAnonymously() {
@@ -25,7 +16,6 @@ struct LoginScreen: View {
             }
             
             UserDefaults.standard.set(true, forKey: "status")
-            print(self.status)
             print("Login Successful!")
         }
     }
@@ -50,7 +40,7 @@ struct LoginScreen: View {
             }.background(Color("Button")).clipShape(Capsule()).padding()
             
             // Anonymous Login
-            NavigationLink(destination: HomeScreen(status: status)) {
+            NavigationLink(destination: HomeScreen()) {
                 Button(action: signInAnonymous) {
                     Text("Anonymous Login")
                         .frame(width: 200)
