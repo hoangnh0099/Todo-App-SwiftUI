@@ -9,15 +9,19 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    let a = Array(1...1000)
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                List {
-                    Text("Hello")
+        VStack {
+            List {
+                ForEach(a, id: \.self) {
+                    item in Text(String(item))
                 }
             }
-            .navigationBarTitle(Text("Home"))
+            
         }
+        .navigationBarTitle(Text("Home"), displayMode: .inline)
     }
 }
 
