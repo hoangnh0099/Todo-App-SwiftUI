@@ -16,7 +16,6 @@
 		8A47E18C23C73CA100670BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A47E18A23C73CA100670BAA /* LaunchScreen.storyboard */; };
 		8A47E19423C749B000670BAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A47E19323C749B000670BAA /* GoogleService-Info.plist */; };
 		8A8EDC4A23C79EB500E325CF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EDC4923C79EB500E325CF /* LoginScreen.swift */; };
-		8A8EDC4D23C79F3F00E325CF /* VerifyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EDC4C23C79F3F00E325CF /* VerifyScreen.swift */; };
 		8A8EDC4F23C79F7700E325CF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EDC4E23C79F7700E325CF /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		8A47E18D23C73CA100670BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A47E19323C749B000670BAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A8EDC4923C79EB500E325CF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		8A8EDC4C23C79F3F00E325CF /* VerifyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyScreen.swift; sourceTree = "<group>"; };
 		8A8EDC4E23C79F7700E325CF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				8A8EDC4923C79EB500E325CF /* LoginScreen.swift */,
-				8A8EDC4C23C79F3F00E325CF /* VerifyScreen.swift */,
 				8A8EDC4E23C79F7700E325CF /* HomeScreen.swift */,
 			);
 			path = Screens;
@@ -238,7 +235,6 @@
 				8A47E18023C73C9F00670BAA /* AppDelegate.swift in Sources */,
 				8A8EDC4A23C79EB500E325CF /* LoginScreen.swift in Sources */,
 				8A8EDC4F23C79F7700E325CF /* HomeScreen.swift in Sources */,
-				8A8EDC4D23C79F3F00E325CF /* VerifyScreen.swift in Sources */,
 				8A47E18223C73C9F00670BAA /* SceneDelegate.swift in Sources */,
 				8A47E18423C73C9F00670BAA /* ContentView.swift in Sources */,
 			);

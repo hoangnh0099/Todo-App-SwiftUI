@@ -5,8 +5,6 @@ import FirebaseFirestore
 
 struct LoginScreen: View {
     
-    @State private var phoneNumber: String = ""
-    
     func signInAnonymous() -> Void {
         Auth.auth().signInAnonymously() {
             (authResult, error) in
@@ -16,6 +14,7 @@ struct LoginScreen: View {
             }
             
             UserDefaults.standard.set(true, forKey: "status")
+            NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
             print("Login Successful!")
         }
     }
@@ -25,19 +24,6 @@ struct LoginScreen: View {
             Text("Login")
                 .bold()
                 .font(.largeTitle)
-            
-            TextField("Phone number", text: $phoneNumber)
-                .keyboardType(.numberPad)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.horizontal)
-                .padding(.horizontal)
-            
-            NavigationLink(destination: VerifyScreen()) {
-                Text("Login")
-                    .frame(width: 100)
-                    .foregroundColor(Color.white)
-                    .padding(10)
-            }.background(Color("Button")).clipShape(Capsule()).padding()
             
             // Anonymous Login
             NavigationLink(destination: HomeScreen()) {
